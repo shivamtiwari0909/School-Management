@@ -163,7 +163,11 @@ export class AddStudentComponent {
     }
     else if(Tab==2)
     {
-      alert("Second Tab")
+      if(this.Student.AcademicYear=="")
+      {
+        this.toaster.error("Please Select Academic Year !");
+        this.Status=1;
+      }
     }
     else if(Tab==3)
     {
