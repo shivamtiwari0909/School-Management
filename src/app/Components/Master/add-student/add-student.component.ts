@@ -171,7 +171,7 @@ export class AddStudentComponent {
     }
     else if(Tab==3)
     {
-      alert("Thired Tab")
+      alert("Thired Tab is changed")
     }
     else if(Tab==4)
     {
