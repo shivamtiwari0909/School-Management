@@ -1,0 +1,45 @@
+export interface teacher {
+    TeacherID:number,
+    RegistrationNo:string,
+    TeacherName:string,
+    UserName:string,
+    UserPassword:string,
+    DateofBirth:string,
+    DateofJoining:string,
+    Gender:string,
+    Country:string,
+    Phone:string,
+    PublicContactWhatsApp:string,
+    Email:string,
+    Department:string,
+    Speciality:string,
+    Qualification:string,
+    SpouseName:string,
+    MotherName:string,
+    FatherName:string,
+    FatherMobileNo:string,
+    MotherMobileNo:string,
+    BloodGroup:string,
+    PermanentAddress:string,
+    LocalAddress:string,
+    ExperienceDetails:string,
+    BankName:string,
+    BankACNo:string,
+    BankIFSCCode:string,
+    AadhaarNumber:string,
+    PanCard:string,
+    Passport:string,
+    DLDetails:string,
+    PFAccountNumber:string,
+    TeacherImage:File | null,
+    TeacherSignature:File | null,
+    CreatedBy:string,
+    Status:0,
+    Message:string,
+}
+
+export interface AllTeacher {
+    Status: number;
+    Message: string;
+    AllTeacher: teacher[];    
+  }

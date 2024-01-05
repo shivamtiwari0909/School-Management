@@ -1,0 +1,70 @@
+<div class="main-wrapper">
+    <app-header></app-header>
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">View Teacher</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="#"> Teacher </a></li>
+                            <li class="breadcrumb-item active">View Teacher</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row" *ngIf="AllTeach">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="example" class="datatable table table-stripped table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>SrNo</th>
+                                            <th>Teacher Name</th>
+                                            <th>Gender</th>
+                                            <th>Phone </th>
+                                            <th>Public Contact / WhatsApp</th> 
+                                            <th>Email </th>
+                                            <th>Speciality</th>  
+                                            <th>Qualification </th>  
+                                            <th>Spouse Name</th>  
+                                            <th>Father Name </th>  
+                                            <th>Father Mob No. </th>  
+                                            <th>Blood Group </th>  
+                                            <th>Experience Details</th>  
+                                            <th>Edit</th>  
+                                            <th>Delete</th>  
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let teacher of AllTeach.AllTeacher; let i = index">
+                                            <td>{{ i + 1 }}</td>
+                                            <td>{{teacher.TeacherName}}</td>
+                                            <td>{{teacher.Gender}}</td>
+                                            <td>{{teacher.Phone}}</td>
+                                            <td>{{teacher.PublicContactWhatsApp}}</td>
+                                            <td>{{teacher.Email}}</td>
+                                            <td>{{teacher.Speciality}}</td>
+                                            <td>{{teacher.Qualification}}</td>
+                                            <td>{{teacher.SpouseName}}</td>
+                                            <td>{{teacher.FatherName}}</td>
+                                            <td>{{teacher.FatherMobileNo}}</td>
+                                            <td>{{teacher.BloodGroup}}</td>
+                                            <td>{{teacher.ExperienceDetails}}</td>
+                                            <td><a (click)="EditSubject(teacher.TeacherID)"><i class="fa fa-edit"    aria-hidden="true"></i></a></td>
+                                            <td><a (click)="DeleteSubject(teacher.TeacherID)"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,248 @@
+<div class="main-wrapper">
+    <app-header></app-header>
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">Add Class</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a> Subject & Class </a></li>
+                            <li class="breadcrumb-item active">Add Class</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <form #form="ngForm" (ngSubmit)="addClass()">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label>Class Name<span class="required">*</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <input name="ClassName" type="text" class="form-control"
+                                                placeholder="Class Name" [(ngModel)]="Class.ClassName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <input name="ShortName" type="text" class="form-control"
+                                                placeholder="Short Name" [(ngModel)]="Class.ShortName">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title text-center">Primary Subjects</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <ng-container *ngFor="let subject of AllSub?.AllSubjects;let i = index">
+                                        <div class="col-md-4" *ngIf="subject.SubjectType==='Primary'">
+                                            <div class="form-group">
+                                                <div>
+                                                    <input class="form-check-input" type="checkbox"
+                                                        [value]="subject.SubjectID" (change)="PrimarySubject($event)"
+                                                        name="primarySubjects" [checked]="subject.isPrimaryChecked">
+                                                    <label>{{subject.SubjectName}}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title text-center">Optional Subjects</h5>
+                            </div>
+                            <div class="card-body" *ngIf="AllSub">
+                                <div class="row">
+                                    <ng-container *ngFor="let subject of AllSub.AllSubjects; let i = index">
+                                        <div class="col-md-4" *ngIf="subject.SubjectType==='Optional'">
+                                            <div class="form-group">
+                                                <div>
+                                                    <input class="form-check-input" type="checkbox"
+                                                        [value]="subject.SubjectID" (change)="OptionalSubject($event)"
+                                                        [checked]="subject.isOptionalChecked">
+                                                    <label>{{subject.SubjectName}}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- --------------------4th-section-open------------------------- -->
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group mb-0 row">
+                                    <div class="col-md-10">
+                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -------------------------4th-section-end -------------------------->
+                    <div class="row" *ngIf="AllClass">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table id="example"
+                                            class="datatable table table-stripped table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>SrNo</th>
+                                                    <th>Class Name</th>
+                                                    <th>Short Name</th>
+                                                    <th>Edit</th>
+                                                    <th>Delete</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let class of AllClass.AllClass; let i = index">
+                                                    <td>{{ i + 1 }}</td>
+                                                    <td>{{class.ClassName}}</td>
+                                                    <td>{{class.ShortName}}</td>
+                                                    <td><a (click)="EditClass(class.ClassID)"><i class="fa fa-edit"
+                                                                aria-hidden="true"></i></a></td>
+                                                    <td><a (click)="DeleteClass(class.ClassID)"><i class="fa fa-trash"
+                                                                aria-hidden="true"></i></a></td>
+                                                    <th><a (click)="OpenModal(class.ClassID)"><button type="button"
+                                                                class="btn btn-info">Add Section</button></a></th>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+    <input type="hidden" name="ClassID" [(ngModel)]="Class.ClassID">
+    <input type="hidden" name="SectionID" [(ngModel)]="Section.SectionID">
+    <div class="modal-dialog" style="top:80px;">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="modal-header text-center">
+                        <h5 class="modal-title text-center" id="staticBackdropLabel">ADD SECTION TO CLASS</h5>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="close" (click)="CloseModal()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <form #form="ngForm" (ngSubmit)="addSection()">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="recipient-name" class="col-form-label">Name <span class="required">*</span> :</label>
+                            </div>
+                            <div class="col-md-10">
+                                <input type="text" placeholder="Name" name="Name" [(ngModel)]="Section.Name"
+                                    class="form-control" id="recipient-name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label for="recipient-name" class="col-form-label">Nick Name <span class="required">*</span>:</label>
+                            </div>
+                            <div class="col-md-10">
+                                <input type="text" placeholder="Nick Name" name="NickName"
+                                    [(ngModel)]="Section.NickName" class="form-control" id="recipient-name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row" *ngIf="AllTeachers">
+                            <div class="col-md-2">
+                                <label>Teacher <span class="required">*</span>:</label>
+                            </div>
+                            <div class="col-md-10">
+                                <select class="form-control" [(ngModel)]="Section.Teacher" name="Teacher" (change)="GetTeacher($event)">
+                                    <option value="0" selected>-- Select Teacher --</option>
+                                    <option *ngFor="let teacher of AllTeachers.AllTeacher;"
+                                        value="{{teacher.TeacherID}}">{{teacher.TeacherName}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row" *ngIf="AllTeachers">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-2">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="AllSection">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table id="example"
+                                            class="datatable table table-stripped table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>SrNo</th>
+                                                    <th>Name</th>
+                                                    <th>Nick Name</th>
+                                                    <th>Teacher Name</th>
+                                                    <th>Edit</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let section of AllSection.AllSection; let i = index">
+                                                    <td>{{ i + 1 }}</td>
+                                                    <td>{{section.Name}}</td>
+                                                    <td>{{section.NickName}}</td>
+                                                    <td>{{section.TeacherName}}</td>
+                                                    <td><a (click)="EditSection(section.SectionID)"><i class="fa fa-edit"
+                                                                aria-hidden="true"></i></a></td>
+                                                    <td><a (click)="DeleteSection(section.SectionID)"><i class="fa fa-trash"
+                                                                aria-hidden="true"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
