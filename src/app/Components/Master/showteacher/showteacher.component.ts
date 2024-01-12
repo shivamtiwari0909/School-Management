@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AllTeacher } from 'src/app/Models/Master/teacher';
-import { AddteacherService } from 'src/app/service/addteacher.service';
+import { AddteacherService } from 'src/app/service/Master/addteacher.service';
 
 @Component({
   selector: 'app-showteacher',

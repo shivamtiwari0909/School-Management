@@ -1,0 +1,101 @@
+<div class="main-wrapper">
+    <app-student-header></app-student-header>
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">Add Monthly Calender For Event</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/student-dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Add Monthly Calender For Event</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Add Event</h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="card-header">
+                                        <a style="padding: 10px" class="btn-secondary bg-danger pt-2 pb-2 w-100 border-0" href="/student-monthly-calender">View Calender</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form #form="ngForm" (ngSubmit)="addNewEvent()">
+                                <input type="hidden" name="hfEventID" [(ngModel)]="Monthlycal.EventID"/>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Event Type</label>
+                                            <select class="form-control" name="EventTypeID" id="EventTypeID" [(ngModel)]="Monthlycal.EventTypeID">
+                                                <option *ngFor="let section of AllEventType.GetAllEventType" [value]="section.EventTypeID">{{ section.EventTypeName }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" class="form-control" placeholder="Title" name="EventName"
+                                            [(ngModel)]="Monthlycal.EventName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Start Date</label>
+                                            <input type="date" class="form-control datepickerAfter" name="StartDate"
+                                            [(ngModel)]="Monthlycal.StartDate">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>End Date</label>
+                                            <input type="date" class="form-control datepickerAfter" name="EndDate"
+                                            [(ngModel)]="Monthlycal.EndDate">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Start Time</label>
+                                            <input type="time" class="form-control datepickerAfter" name="StartTime"
+                                            [(ngModel)]="Monthlycal.StartTime">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>End Time</label>
+                                            <input type="time" class="form-control datepickerAfter" name="EndTime"
+                                            [(ngModel)]="Monthlycal.EndTime">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Description</label>
+                                            <textarea placeholder="Description" name="Description" style="min-height: 80px !important;" class="form-control"
+                                            [(ngModel)]="Monthlycal.Description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-0 row">
+                                        <div class="col-md-10">
+                                            <button class="btn btn-primary" type="submit">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-student-footer></app-student-footer>
+</div>

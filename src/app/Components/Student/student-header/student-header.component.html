@@ -1,0 +1,124 @@
+<div class="header">
+    <div class="header-left"> <a href="/student-dashboard" class="logo"> <img src="/assets/img/logo1.png" alt="Logo"> </a> <a
+        href="/student-dashboard" class="logo logo-small"> <img src="/assets/img/profiles/avatar-01.jpg" alt="Logo" width="30"
+          height="30"> </a> </div>
+    <div class="menu-toggle"> <a href="javascript:void(0);" id="toggle_btn"> <i class="fas fa-bars"></i> </a> </div>
+    <div class="top-nav-search">
+      <form>
+        <input type="text" class="form-control" placeholder="Search here">
+        <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+    <a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
+    <ul class="nav user-menu">
+      <li class="nav-item dropdown noti-dropdown me-2"> <a href='javascript:Void(0)'
+          class="dropdown-toggle nav-link header-nav-list" data-bs-toggle="dropdown"> <img
+            src="/assets/img/icons/header-icon-05.svg" alt> </a>
+        <div class="dropdown-menu notifications">
+          <div class="topnav-dropdown-header"> <span class="notification-title">Notifications</span> <a
+              href="javascript:void(0)" class="clear-noti"> Clear All </a> </div>
+          <div class="noti-content">
+            <ul class="notification-list">
+              <li class="notification-message"> <a href='javascript:Void(0)'>
+                  <div class="media d-flex"> <span class="avatar avatar-sm flex-shrink-0"> <img
+                        class="avatar-img rounded-circle" alt="User Image" src="/assets/img/profiles/avatar-02.jpg">
+                    </span>
+                    <div class="media-body flex-grow-1">
+                      <p class="noti-details"><span class="noti-title">Carlson Tech</span> has
+                        approved <span class="noti-title">your estimate</span></p>
+                      <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+                    </div>
+                  </div>
+                </a> </li>
+              <li class="notification-message"> <a href='javascript:Void(0)'>
+                  <div class="media d-flex"> <span class="avatar avatar-sm flex-shrink-0"> <img
+                        class="avatar-img rounded-circle" alt="User Image" src="/assets/img/profiles/avatar-17.jpg">
+                    </span>
+                    <div class="media-body flex-grow-1">
+                      <p class="noti-details"><span class="noti-title">John Hendry</span> sent a
+                        cancellation request <span class="noti-title">Apple iPhone XR</span></p>
+                      <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+                    </div>
+                  </div>
+                </a> </li>
+              <li class="notification-message"> <a href='javascript:Void(0)'>
+                  <div class="media d-flex"> <span class="avatar avatar-sm flex-shrink-0"> <img
+                        class="avatar-img rounded-circle" alt="User Image" src="/assets/img/profiles/avatar-13.jpg">
+                    </span>
+                    <div class="media-body flex-grow-1">
+                      <p class="noti-details"><span class="noti-title">Mercury Software Inc</span>
+                        added a new product <span class="noti-title">Apple MacBook Pro</span></p>
+                      <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+                    </div>
+                  </div>
+                </a> </li>
+            </ul>
+          </div>
+          <div class="topnav-dropdown-footer"> <a href='javascript:Void(0)'>View all Notifications</a> </div>
+        </div>
+      </li>
+  
+      <li class="nav-item dropdown has-arrow new-user-menus"> <a href='javascript:Void(0)'
+          class="dropdown-toggle nav-link" data-bs-toggle="dropdown"> <span class="user-img"> <img class="rounded-circle"
+              src="/assets/img/profiles/avatar-01.jpg" width="31" alt="Ryan Taylor">
+            <div class="user-text">
+              <p class="text-muted mb-0">Welcome, {{ username }} {{ classname }} !</p>
+            </div>
+          </span> </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="student-change-password">Change Password</a>
+          <a class="dropdown-item" (click)="LogOut();">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+      <div id="sidebar-menu" class="sidebar-menu">
+        <ul class="menu">
+          <li class="menu-title"> <span>Main Menu</span> </li>
+          <li class="submenu active"><a href="/student-dashboard" class="active"><i class="feather-grid"></i> <span> Dashboard</span> </a></li>
+          <li class="submenu"><a href="/student-live-class"><i class="fas fa-book"></i> <span> Live Class</span> </a></li>
+          <li class="submenu"><a href="/student-class-routine"><i class="fas fa-eye"></i> <span> Class Routine</span> </a></li>
+          <li class="submenu"><a href="/student-subject-teachers"><i class="fas fa-edit"></i> <span> Subject Teachers</span> </a></li>
+          <li class="submenu"><a href="/student-profile-report"><i class="fas fa-book-reader"></i> <span> Profile Report</span> </a></li>
+          <li class="submenu"><a href="/student-apply-leave"><i class="fas fa-clipboard"></i> <span> Apply for Leave</span> </a></li>
+          <li class="submenu"><a href="/student-video-tutorial"><i class="fas fa-calendar-day"></i> <span> Video Tutorial</span> </a></li>
+          <li class="submenu" (click)="toggleClass(7)" [ngClass]="{'active2': isActive[7]}"> <a href='javascript:Void(0)'><i
+                class="fas fa-building"></i> <span>Assignment </span> <span class="menu-arrow"></span></a>
+            <ul class="items">
+              <li><a href="/student-daily-notes">Daily Notes</a></li>
+              <li><a href="/student-home-work">Home Work</a></li>
+              <li><a href="/student-class-work">Class Work</a></li>
+              <li><a href="/student-study-material">Study Material</a></li>
+              <li><a href="/student-view-curriculum">View Curriculum</a></li>
+            </ul>
+          </li>
+          <li class="submenu"><a href="/student-monthly-calender"><i class="fas fa-tasks"></i> <span> Monthly Calender</span> </a></li>
+          <li class="submenu"><a href="/student-exam-schedule"><i class="fa fa-eye-slash"></i> <span> Exam Schedule</span> </a></li>
+          <li class="submenu"><a href="/student-view-marksheet"><i class="fa fa-eye-slash"></i> <span> View Marksheet</span> </a></li>
+          <li class="submenu" (click)="toggleClass(10)" [ngClass]="{'active2': isActive[10]}"> <a
+              href='javascript:Void(0)'><i class="fa fa-edit"></i> <span>Online Examination</span> <span
+                class="menu-arrow"></span></a>
+            <ul class="items">
+              <li><a href="/student-my-exams">My Exams</a></li>
+              <li><a href="/student-exams-result">Exams Result</a></li>
+            </ul>
+          </li>
+          <li class="submenu"><a href="/student-fees-history"><i class="fa fa-eye-slash"></i> <span> Fees History</span> </a></li>
+          <li class="submenu"><a href="/student-pay-online"><i class="fa fa-eye-slash"></i> <span> Pay Online</span> </a></li>
+          <li class="submenu"><a href="/student-library-book"><i class="fa fa-eye-slash"></i> <span> Library Book</span> </a></li>
+          <li class="submenu"><a href="/student-return-book"><i class="fa fa-eye-slash"></i> <span> Return Book</span> </a></li>
+          <li class="submenu" (click)="toggleClass(11)" [ngClass]="{'active2': isActive[11]}"> <a
+            href='javascript:Void(0)'><i class="fa fa-edit"></i> <span>Notice Board</span> <span
+              class="menu-arrow"></span></a>
+            <ul class="items">
+              <li><a href="/student-view-notices">View Notices</a></li>
+              <li><a href="/student-important-lists-dates">Important Lists/Dates</a></li>
+            </ul>
+          </li>
+          <li class="submenu"><a href="/student-photo-gallery"><i class="fa fa-eye-slash"></i> <span> Photo Gallery</span> </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>

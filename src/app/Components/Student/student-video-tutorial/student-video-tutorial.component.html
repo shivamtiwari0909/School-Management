@@ -1,0 +1,182 @@
+<div class="main-wrapper">
+    <app-student-header></app-student-header>
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">Video Tutorial</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/student-dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Video Tutorial</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Video Tutorial List</h5>
+                        </div>
+                        <div class="card-body">
+                            <form #form="ngForm">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <button class="btn btn-primary me-sm-2" type="submit">Print Report</button>
+                                            <button class="btn btn-warning me-sm-2" type="submit">View Subject</button>
+                                            <button class="btn btn-danger" type="submit">Lesson Plan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4" *ngFor="let classRoute of AllVideo.AllVideoTutorial; let i = index">
+                    <div class="card card-01" style="height: 85%;">
+                        <div class="profile-box">
+                            <img class="card-img-top" src="{{classRoute.VideoImage}}" alt="Card image cap">
+                        </div>
+                        <div class="text-center card-text open-tag">
+                            <h6>{{classRoute.TeacherName}}</h6>
+                            <p>{{classRoute.SubjectName}}</p>
+                            <p class="hide"><b>Live Class ID : </b>{{classRoute.VideoImage}}</p>
+                            <p>{{classRoute.VideoLink}}</p>
+                            <p>{{classRoute.Description}}</p>
+                            <p>{{classRoute.Date}}</p>
+                        </div>
+                        <div class="card-body text-center  open-tag">
+                            <button data-toggle="modal" data-target="#exampleModal" type="button" class="btn-secondary bg-danger pt-2 pb-2 w-100 border-0">Ask New Question</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel">Ask Your Question</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label>Subject</label>
+                                        <input type="text" class="form-control" placeholder="Subject">
+                                        <label></label>
+                                        <textarea placeholder="Ask Your Question?" style="height: 100px;" class="form-control"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success">Submit</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+                <div class="row">
+                    <!--  page header -->
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Video tutorial</h1>
+                    </div>
+                    <!-- end  page header -->
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <span>Video tutorial</span>
+                                <button class="btn btn-danger printbutton">Print report</button>
+                                <a class="btn btn-warning" href="https://account.campuscover.com/admin/viewsubject/subject">View Subject</a>
+                                <a class="btn btn-primary" href="https://account.campuscover.com/admin/lesson/subject">Lesson Plan</a>
+                            </div>
+                            <div class="panel-body">
+                                <div class='row'>
+                                    <div id="#auto_play_now">
+                                    </div>
+                                    <div class='col-md-12 nopadding'>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <div title="https://youtu.be/_invNC0PyOs">
+                                                    <div class="btn-danger" style="border: solid 1px;padding: 5px;border-bottom: none;overflow-y: auto;">
+                                                        <b>Homework for  | Maths</b>
+                                                    </div>
+                                                    <div class="video_block" onclick="play_video('_invNC0PyOs' , '')">
+                                                        <img src="http://img.youtube.com/vi/_invNC0PyOs/mqdefault.jpg" />
+                                                    </div>
+                                                    <div style="height: 150px;border: solid 1px;padding: 5px;border-top: none;overflow-y: auto;">
+                                                        <b>Description : </b>
+                                                        <br>
+                                                        Maths : Complete chapter 5 									
+                                                        <br>
+                                                        <br>
+                                                        <span class="small"><b>Mr. Alok Jha</b> on 21 May 2023</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div title="https://youtu.be/ErnYo3Pbi6Y">
+                                                    <div class="btn-danger" style="border: solid 1px;padding: 5px;border-bottom: none;overflow-y: auto;">
+                                                        <b>Homework for  | Science</b>
+                                                    </div>
+                                                    <div class="video_block" onclick="play_video('ErnYo3Pbi6Y' , '')">
+                                                        <img src="http://img.youtube.com/vi/ErnYo3Pbi6Y/mqdefault.jpg" />
+                                                    </div>
+                                                    <div style="height: 150px;border: solid 1px;padding: 5px;border-top: none;overflow-y: auto;">
+                                                        <b>Description : </b>
+                                                        <br>
+                                                        Science : Complete chapter 2									
+                                                        <br>
+                                                        <br>
+                                                        <span class="small"><b>Mr. Alok Jha</b> on 19 May 2023</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div title="https://youtu.be/nH2yoBrweE8">
+                                                    <div class="btn-danger" style="border: solid 1px;padding: 5px;border-bottom: none;overflow-y: auto;">
+                                                        <b>Homework for  | Maths</b>
+                                                    </div>
+                                                    <div class="video_block" onclick="play_video('nH2yoBrweE8' , '')">
+                                                        <img src="http://img.youtube.com/vi/nH2yoBrweE8/mqdefault.jpg" />
+                                                    </div>
+                                                    <div style="height: 150px;border: solid 1px;padding: 5px;border-top: none;overflow-y: auto;">
+                                                        <b>Description : </b>
+                                                        <br>
+                                                        Maths : Complete Chapter 5									
+                                                        <br>
+                                                        <br>
+                                                        <span class="small"><b>Administrator</b> on 20 Apr 2023</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Advanced Tables -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <app-student-footer></app-student-footer>
+</div>

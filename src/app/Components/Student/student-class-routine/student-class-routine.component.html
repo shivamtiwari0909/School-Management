@@ -1,0 +1,57 @@
+<div class="main-wrapper">
+    <app-student-header></app-student-header>
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">Class Routine</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/student-dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Class Routine</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="text-center">{{ classname }} Class Routine</h3>
+                            <div class="table-responsive">
+                                <table class="table2" cellspacing="2" cellpadding="2" *ngIf="AllClassRout">
+                                    <thead>
+                                        <tr>
+                                            <th>Days</th>
+                                            <th>Period 1</th>
+                                            <th>Period 2</th>
+                                            <th>Period 3</th>
+                                            <th>Period 4 </th>
+                                            <th>Period 5 </th>
+                                            <th>Period 6 </th>
+                                            <th>Period 7 </th>
+                                            <th>Period 8 </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let classRoute of AllClassRout.AllClassRoutine; let i = index">  
+                                            <td bgcolor="#0f8bc2">
+                                                <div class="days">{{classRoute.Day}}</div>
+                                            </td>
+                                            <td *ngIf="classRoute.Period == 'Period 1';">
+                                                <div class="subject">{{classRoute.SubjectName}}</div>
+                                                <div class="class_content_name">{{classRoute.TeacherName}}</div>
+                                                <div class="class_time">{{classRoute.StartingTime}} - {{classRoute.EndingTime}}</div>
+                                            </td>
+                                        </tr>         
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-student-footer></app-student-footer>
+</div>

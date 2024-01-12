@@ -1,0 +1,133 @@
+<div class="main-wrapper">
+    <app-student-header></app-student-header>
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">Exam Schedule</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/student-dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Exam Schedule</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <div class="card-header">
+                                <h5 class="card-title">Exam Schedule List</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card-header">
+                                <a class="btn btn-danger" href="/viewresult">Online Exam Result</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <table id="example" class="datatable table table-stripped table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Exam Information</th>
+                                    <th>Schedule</th>
+                                    <th>View Schedule</th>
+                                    <th>Result Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let exam of AllExa.AllExam; let i = index">
+                                    <td>
+                                        {{exam.Title}}
+                                    </td>
+                                    <td>
+                                        {{exam.ExamName}}
+                                    </td>
+                                    <td>
+                                        <a data-toggle="modal" data-target="#exampleModal" (click)="GetExamSchedule(exam.ExamID)"
+                                        style="width: 100%;color: white;" href="#" title="Download Exam Schedule"
+                                        class="download_schedule btn bg-info btn-icon icon-left"
+                                        data-id="12569"><i class="fa fa-download"></i>
+                                        Schedule</a>
+                                    </td>
+                                    <td>
+                                        <b>Result : </b>{{exam.ResultDate}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="table-responsive">
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" style="max-width: 608px;">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" id="exampleModalLabel">Exam Schedule</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="col-lg-12">
+                                                            <div style="text-align: center;">
+                                                                <input type="image" src="http://localhost:4200/assets/img/logo1.png" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-12">
+                                                            <div style="text-align: center;">
+                                                                <h4 class="modal-title" *ngFor="let examschedule of AllExams.AllExamSchedule; let i = index">
+                                                                    <div *ngIf="i === 0">
+                                                                        {{examschedule.ExamName}}
+                                                                    </div>
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                        <table id="example" class="datatable table table-stripped table-hover table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Date</th>
+                                                                    <th>Subject</th>
+                                                                    <th>Start Time</th>
+                                                                    <th>End Time</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr *ngFor="let examschedule of AllExams.AllExamSchedule; let i = index">
+                                                                    <td>
+                                                                        {{examschedule.Date}}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{examschedule.SubjectName}}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{examschedule.StartTime}}
+                                                                    </td>
+                                                                    <td>
+                                                                        {{examschedule.EndTime}}
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-student-footer></app-student-footer>
+</div>

@@ -1,0 +1,825 @@
+<div class="main-wrapper">
+    <app-student-header></app-student-header>
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Library Book List</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading printhide">
+                                <span><b>list of all books</b></span>
+                                <button onclick="make_print()" type="button" class="btn btn-primary">Print</button>
+                                <button type="button" id="exportExcel" class="btn btn-danger">Export CSV</button>
+                            </div>
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>
+                                        <select class="form-control titleEditor" name="classID" id="classID">
+                                            <option value="">Select Class</option>
+                                            <option value="328">I</option>
+                                            <option value="4052">II</option>
+                                            <option value="324">III</option>
+                                            <option value="6266">IV</option>
+                                            <option value="319">V</option>
+                                            <option value="321">VI</option>
+                                            <option value="320">VII</option>
+                                            <option value="325">VIII</option>
+                                            <option value="326">IX</option>
+                                            <option value="327">X</option>
+                                            <option value="318">XI</option>
+                                            <option value="1320">XII</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <select class="form-control titleEditor" name="subjectID" id="subjectID">
+                                            <option value="">Select Subject</option>
+                                            <option value="845">SST</option>
+                                            <option value="1964">Hindi</option>
+                                            <option value="3909">English</option>
+                                            <option value="6043">Physical Education</option>
+                                            <option value="6250">G K</option>
+                                            <option value="6386">Maths</option>
+                                            <option value="6894">Science</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" id="search_data"
+                                            placeholder="TITLE | PUBLICATION | AUTHOR | ACCESSION NO. | SERIAL NO."
+                                            value="" name="search" class="form-control titleEditor">
+                                    </td>
+                                    <td>
+                                        <input type="submit" id="search_anything" class="btn btn-primary submit col-md-12"
+                                            value="Go" name="mysubmit">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive" style="background-color: white;border: 1px solid #f2f2f2;margin-bottom: 20px;">
+                    <table class="table table-striped table-bordered table-hover" id="listadded">
+                        <thead>
+                            <tr>
+                                <td colspan="100%" style="background-color: rgb(1, 92, 113); color: #fff; text-align: center;">
+                                    <b>Aks Websoft ERP Software</b> - Library Book List
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Sr.No.</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Accession</th>
+                                <th>Class</th>
+                                <th>Publisher</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    1
+                                </td>
+                                <td>
+                                    Complete English Grammar
+                                </td>
+                                <td>
+                                    Raymond Morphay
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    IX
+                                </td>
+                                <td>
+                                    Cambridge University pressed
+                                </td>
+                                <td>
+
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>0
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>7 1234037b2143 3482
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>15
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>B
+                                </td>
+                                <td>
+                                    <b>Position : </b>Left
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    2
+                                </td>
+                                <td>
+                                    New Pathvays Course in English
+                                </td>
+                                <td>
+                                    Mala Palani
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    Oxford University Press
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>1
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>BOMIS-34-20
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    3
+                                </td>
+                                <td>
+                                    Mathematics
+                                </td>
+                                <td>
+                                    NCERT
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    NCERT
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>1
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>BOMIS-25-20
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    4
+                                </td>
+                                <td>
+                                    Hindi
+                                </td>
+                                <td>
+                                    3
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>0
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    5
+                                </td>
+                                <td>
+                                    English Test
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    I
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>12
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    6
+                                </td>
+                                <td>
+                                    Text Book
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    I
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>12
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    7
+                                </td>
+                                <td>
+                                    Physics
+                                </td>
+                                <td>
+                                    Jaishankar Prasad
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    bb
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>0
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    8
+                                </td>
+                                <td>
+                                    Hindi 1278
+                                </td>
+                                <td>
+                                    as
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    I
+                                </td>
+                                <td>
+                                    S. Chand
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>1
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>789456123
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    9
+                                </td>
+                                <td>
+                                    Maths
+                                </td>
+                                <td>
+                                    R. S. Aggrawal
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    I
+                                </td>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>5
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    10
+                                </td>
+                                <td>
+                                    Hindi
+                                </td>
+                                <td>
+                                    S. Kumari
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    V
+                                </td>
+                                <td>
+                                    M Publisher
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>3
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>s3
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    11
+                                </td>
+                                <td>
+                                    Let us C
+                                </td>
+                                <td>
+                                    Yashwant Roy
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    XII
+                                </td>
+                                <td>
+                                    Prakash Publication
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>10
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>s3
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    12
+                                </td>
+                                <td>
+                                    English Grammer
+                                </td>
+                                <td>
+                                    S. Chand
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    I
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>1
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>s3
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    13
+                                </td>
+                                <td>
+                                    Marketing
+                                </td>
+                                <td>
+                                    Edison
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    XII
+                                </td>
+                                <td>
+                                    Kotler
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>92
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>s3
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    14
+                                </td>
+                                <td>
+                                    Marketing Management
+                                </td>
+                                <td>
+                                    Kotler
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    XII
+                                </td>
+                                <td>
+                                    Kotler
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>10
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>s3
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    15
+                                </td>
+                                <td>
+                                    Business Law
+                                </td>
+                                <td>
+                                    R B Bhusan
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    XII
+                                </td>
+                                <td>
+                                    Republicans
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>15
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>s3
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459">
+                                <td> 
+                                    16
+                                </td>
+                                <td>
+                                    S. Chand Mathematics for Class X
+                                </td>
+                                <td>
+                                    H.K Daas
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    X
+                                </td>
+                                <td>
+                                    
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            <tr class="gradeU listing use459" style="color: #767575;">
+                                <td>
+                                    <b>Quantity : </b>100
+                                </td>
+                                <td>
+                                    <b>Barcode No. : </b>
+                                </td>
+                                <td>
+                                    <b>Sr. No. : </b>
+                                </td>
+                                <td>
+                                    <b>Almeria No. : </b>
+                                </td>
+                                <td>
+                                    <b>Rack No. : </b>
+                                </td>
+                                <td>
+                                    <b>Position : </b>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <app-student-footer></app-student-footer>
+</div>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Changepassword } from 'src/app/Models/Master/changepassword';
-import { ChangepasswordService } from 'src/app/service/changepassword.service';
+import { ChangepasswordService } from 'src/app/service/Master/changepassword.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

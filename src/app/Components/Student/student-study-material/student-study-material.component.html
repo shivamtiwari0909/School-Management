@@ -1,0 +1,92 @@
+<div class="main-wrapper">
+    <app-student-header></app-student-header>
+    <style>
+        @-webkit-keyframes blinker {
+            from {opacity: 1.0;}
+            to {opacity: 0.0;}
+        }
+        .blink{
+            text-decoration: blink;
+            -webkit-animation-name: blinker;
+            -webkit-animation-duration: 0.6s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-timing-function:ease-in-out;
+            -webkit-animation-direction: alternate;
+        }
+    </style>
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">Study Material</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/student-dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Study Material</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">All Study Material</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <button class="btn btn-primary me-sm-2" type="submit">Lesson Plan</button>
+                                        <button class="btn btn-warning me-sm-2" type="submit">View Subject</button>
+                                        <button class="btn btn-danger me-sm-2" type="submit">eLibrary</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 m-auto">
+                            <p class="blink" style="text-align: right;">
+                                <font class="but-ton1">
+                                    <a style="color: #fff; font-size: 1.1em; background-color: red; padding: 10px;" href="/eLibrary">
+                                        eLibrary
+                                    </a>
+                                </font>
+                            </p>
+                            <div class="table-responsive" style="background-color: white;border: 1px solid #f2f2f2;margin-bottom: 20px;">
+                                <table class="table table-striped table-bordered table-hover" id="listadded">
+                                    <thead>
+                                        <tr>
+                                            <td colspan="100%" style="background-color: rgb(51 165 219); color: #fff; text-align: center;">List of Material</td>
+                                        </tr>
+                                        <tr>
+                                            <th width="70px">Sr.No.</th>
+                                            <th width="50%">Title</th>
+                                            <th>Class</th>
+                                            <th width="150px">Download</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeU listing use459" *ngFor="let studymaterial of AllStudyMat.AllStudyMaterial; let i = index">
+                                            <td>{{ i + 1 }}</td>
+                                            <td>{{studymaterial.Description}}</td>
+                                            <td>{{ classname }}<br>{{studymaterial.SubjectName}}</td>
+                                            <td>
+                                                <a *ngIf="studymaterial.ImageLink !== ''" href="{{studymaterial.ImageLink}}" target="_blank" class="btn-primary bg-primary pt-2 pb-2 w-100 mb-1 border-0" style="padding: 10px;"><i class="fas fa-download"></i>Download</a>
+                                                <a *ngIf="studymaterial.VideoLink !== ''" href="{{studymaterial.VideoLink}}" target="_blank" class="btn-secondary bg-danger pt-2 pb-2 w-100 border-0" style="padding: 10px;"><i class="fas fa-play"></i>Watch Now</a>
+                                                <a *ngIf="studymaterial.PayNow !== '0'" href="/student-pay-now?PayNow={{studymaterial.PayNow}}" target="_blank" class="btn-secondary bg-danger pt-2 pb-2 w-50 border-0" style="padding: 10px;"><img src="assets/img/money.png">Pay Now</a>
+                                                <div *ngIf="studymaterial.ImageLink == '' && studymaterial.VideoLink == '' && studymaterial.PayNow == '0'">
+                                                    <button type="button" class="btn btn-warning">N/A</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-student-footer></app-student-footer>
+</div>

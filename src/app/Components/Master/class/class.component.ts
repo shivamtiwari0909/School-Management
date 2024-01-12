@@ -3,10 +3,10 @@ import { Router } from '@angular/router';
 import { event } from 'jquery';
 import { AllClass, AllSection, Class, Section } from 'src/app/Models/Master/class';
 import { AllSubjects } from 'src/app/Models/Master/subject';
-import { ClassService } from 'src/app/service/class.service';
+import { ClassService } from 'src/app/service/Master/class.service';
 import { ToastrService } from 'ngx-toastr';
 import { Subject } from 'rxjs';
-import { AddteacherService } from 'src/app/service/addteacher.service';
+import { AddteacherService } from 'src/app/service/Master/addteacher.service';
 import { AllTeacher } from 'src/app/Models/Master/teacher';
 
 @Component({

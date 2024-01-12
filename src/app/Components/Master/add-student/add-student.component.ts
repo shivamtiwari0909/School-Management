@@ -3,8 +3,8 @@ import { error } from 'jquery';
 import { ToastrService } from 'ngx-toastr';
 import { AllClass, AllSection } from 'src/app/Models/Master/class';
 import { Student } from 'src/app/Models/Master/student';
-import { ClassService } from 'src/app/service/class.service';
-import { StudentService } from 'src/app/service/student.service';
+import { ClassService } from 'src/app/service/Master/class.service';
+import { StudentService } from 'src/app/service/Master/student.service';
 declare var bootstrap: any;
 @Component({
   selector: 'app-add-student',

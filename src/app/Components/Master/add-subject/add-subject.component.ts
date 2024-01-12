@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AllSubjects, Subject } from 'src/app/Models/Master/subject';
-import { SubjectService } from 'src/app/service/subject.service';
+import { SubjectService } from 'src/app/service/Master/subject.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({

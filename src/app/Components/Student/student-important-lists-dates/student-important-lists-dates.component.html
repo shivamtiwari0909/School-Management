@@ -1,0 +1,62 @@
+<div class="main-wrapper">
+    <app-student-header></app-student-header>
+    <div class="page-wrapper">
+        <div class="content container-fluid">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col">
+                        <h3 class="page-title">Important Programs/Dates</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/student-dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Important Programs/Dates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Lost of Important Programs/Dates</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="example" class="datatable table table-stripped table-hover table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Sr.No.</th>
+                                            <th>Title</th>
+                                            <th>Program For</th>
+                                            <th>Download</th>
+                                            <th>CreatedOn</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gradeU listing use459" *ngFor="let importantlists of AllImportantLists.AllImportantListsDates; let i = index">
+                                            <td> 
+                                                {{ i + 1 }}
+                                            </td>
+                                            <td>
+                                                {{importantlists.Title}}
+                                            </td>
+                                            <td>
+                                                {{importantlists.ProgramFor}}
+                                            </td>
+                                            <td>
+                                                <a *ngIf="importantlists.ImageLink !== ''" href="{{importantlists.ImageLink}}" target="_blank" class="btn-primary bg-primary pt-2 pb-2 w-100 mb-1 border-0" style="padding: 10px;"><i class="fas fa-download"></i>Download</a>
+                                            </td>
+                                            <td>
+                                                {{importantlists.CreatedDate}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-student-footer></app-student-footer>
+</div>
