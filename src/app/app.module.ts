@@ -47,7 +47,7 @@ import { AddStudentComponent } from './Components/Master/add-student/add-student
   providers: [
     DatePipe
   ],
-  bootstrap: [AppComponent,AddStudentComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { 
   

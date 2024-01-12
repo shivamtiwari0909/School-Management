@@ -20,541 +20,581 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="wizard my-5">
-                                    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                                        <li class="nav-item flex-fill">
-                                            <p>Personal Detail</p>
-                                            <a
-                                                class="nav-link active rounded-circle mx-auto d-flex align-items-center justify-content-center"
-                                                href="#step1" id="step1-tab">
-                                                1
-                                            </a>
-                                        </li>
-                                        <li class="nav-item flex-fill">
-                                            <p>Contact Detail</p>
-                                            <!-- data-bs-toggle="tab" role="tab" aria-controls="step5"
+                                <form #form="ngForm" (ngSubmit)="AddStudent()">
+                                    <div class="wizard my-5">
+                                        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                                            <li class="nav-item flex-fill">
+                                                <p>Personal Detail</p>
+                                                <a class="nav-link active rounded-circle mx-auto d-flex align-items-center justify-content-center"
+                                                    href="#step1" id="step1-tab">
+                                                    1
+                                                </a>
+                                            </li>
+                                            <li class="nav-item flex-fill">
+                                                <p>Contact Detail</p>
+                                                <!-- data-bs-toggle="tab" role="tab" aria-controls="step5"
                                                 aria-selected="false" href="#step2" id="step2-tab" -->
-                                            <a
-                                                class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center"
-                                                href="#step2" id="step2-tab">
-                                                2
-                                            </a>
-                                        </li>
-                                        <li class="nav-item flex-fill">
-                                            <p>General Detail</p>
-                                            <a
-                                                class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center"
-                                                href="#step3" id="step3-tab">
-                                                3
-                                            </a>
-                                        </li>
-                                        <li class="nav-item flex-fill">
-                                            <p>Accounts Detail</p>
-                                            <a
-                                                class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center"
-                                                href="#step4" id="step4-tab">
-                                                4
-                                            </a>
-                                        </li>
-                                        <li class="nav-item flex-fill">
-                                            <p>Document Detail</p>
-                                            <a
-                                                class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center"
-                                                href="#step5" id="step5-tab">
-                                                5
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content" id="myTabContent">
-                                        <!-- =========================first-tab-open ==========================-->
-                                        <div class="tab-pane fade show active" role="tabpanel" id="step1"
-                                            aria-labelledby="step1-tab">
-                                            <div class="card-body">
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Academic Year</label>
-                                                    <div class="col-md-6">
-                                                        <select class="form-control form-select"
-                                                            [(ngModel)]="Student.AcademicYear">
-                                                            <option value="">-- Select Academic Year --</option>
-                                                            <option>2023-2024</option>
-                                                        </select>
+                                                <a class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center"
+                                                    href="#step2" id="step2-tab">
+                                                    2
+                                                </a>
+                                            </li>
+                                            <li class="nav-item flex-fill">
+                                                <p>General Detail</p>
+                                                <a class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center"
+                                                    href="#step3" id="step3-tab">
+                                                    3
+                                                </a>
+                                            </li>
+                                            <li class="nav-item flex-fill">
+                                                <p>Accounts Detail</p>
+                                                <a class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center"
+                                                    href="#step4" id="step4-tab">
+                                                    4
+                                                </a>
+                                            </li>
+                                            <li class="nav-item flex-fill">
+                                                <p>Document Detail</p>
+                                                <a class="nav-link rounded-circle mx-auto d-flex align-items-center justify-content-center"
+                                                    href="#step5" id="step5-tab">
+                                                    5
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent">
+                                            <!-- =========================first-tab-open ==========================-->
+                                            <div class="tab-pane fade show active" role="tabpanel" id="step1"
+                                                aria-labelledby="step1-tab">
+                                                <div class="card-body">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Academic Year</label>
+                                                        <div class="col-md-6">
+                                                            <select class="form-control form-select"
+                                                                [(ngModel)]="Student.AcademicYear" name="AcademicYear">
+                                                                <option value="">-- Select Academic Year --</option>
+                                                                <option>2023-2024</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Reg. No.</label>
-                                                    <div class="col-md-3">
-                                                        <input type="" class="form-control" placeholder="Reg.No">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Reg. No.</label>
+                                                        <div class="col-md-3">
+                                                            <input type="" class="form-control" placeholder="Reg.No"
+                                                                name="RegNo" [(ngModel)]="Student.RegNo">
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <input type="" class="form-control"
+                                                                placeholder="Admission No" name="Admission"
+                                                                [(ngModel)]="Student.AdmissionNo">
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <input type="" class="form-control" placeholder="Admission No"
-                                                            [(ngModel)]="Student.RegNo">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Date of Admission</label>
+                                                        <div class="col-md-6">
+                                                            <input type="date" class="form-control"
+                                                                name="DateOfAddmission"
+                                                                [(ngModel)]="Student.DateOfAddmission">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Date of Admission</label>
-                                                    <div class="col-md-6">
-                                                        <input type="date" class="form-control"
-                                                            [(ngModel)]="Student.DateOfAddmission">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Student Name <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="StudentName"
+                                                                [(ngModel)]="Student.StudentName">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Student Name <span
-                                                            class="required">*</span></label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            [(ngModel)]="Student.StudentName">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Username <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-3">
+                                                            <input type="text" class="form-control" placeholder=""
+                                                                name="UserName" [(ngModel)]="Student.UserName">
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <input type="text" class="form-control" disabled
+                                                                placeholder=".d.a">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Username <span
-                                                            class="required">*</span></label>
-                                                    <div class="col-md-3">
-                                                        <input type="text" class="form-control" placeholder=""
-                                                            [(ngModel)]="Student.UserName">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Password</label>
+                                                        <div class="col-md-6">
+                                                            <input class="form-control" type="password" name="Password"
+                                                                [(ngModel)]="Student.Password">
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <input type="text" class="form-control" disabled
-                                                            placeholder=".d.a">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Student's Email</label>
+                                                        <div class="col-md-6">
+                                                            <input type="email" class="form-control" name="StudentEmail"
+                                                                placeholder="Student's Email"
+                                                                [(ngModel)]="Student.StudentEmail">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Password</label>
-                                                    <div class="col-md-6">
-                                                        <input class="form-control" type="password"
-                                                            [(ngModel)]="Student.Password">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Current class <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-3">
+                                                            <select class="form-control form-select" name="CurrentClass"
+                                                                [(ngModel)]="Student.CurrentClass"
+                                                                (change)="GetSection()">
+                                                                <option value="">-- Select Class --</option>
+                                                                <option *ngFor="let class of AllClass?.AllClass;"
+                                                                    value="{{class.ClassID}}">{{class.ClassName}}
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <select class="form-control form-select" name="Section"
+                                                                [(ngModel)]="Student.Section">
+                                                                <option value="">-- Select Section --</option>
+                                                                <option *ngFor="let section of AllSection?.AllSection;"
+                                                                    value="{{section.SectionID}}">{{section.Name}}
+                                                                </option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Student's Email</label>
-                                                    <div class="col-md-6">
-                                                        <input type="email" class="form-control"
-                                                            placeholder="Student's Email"
-                                                            [(ngModel)]="Student.StudentEmail">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Mobile</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="Mobile"
+                                                                placeholder="Primary Mobile No."
+                                                                [(ngModel)]="Student.MobileNo">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Current class <span
-                                                            class="required">*</span></label>
-                                                    <div class="col-md-3">
-                                                        <select class="form-control form-select"
-                                                            [(ngModel)]="Student.CurrentClass" (change)="GetSection()">
-                                                            <option value="">-- Select Class --</option>
-                                                            <option *ngFor="let class of AllClass?.AllClass;"
-                                                                value="{{class.ClassID}}">{{class.ClassName}}
-                                                            </option>
-                                                        </select>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Date of Birth <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-3">
+                                                            <input type="date" class="form-control" name="DateOfBirth"
+                                                                [(ngModel)]="Student.DateOfBirth">
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <button type="button" class="btn btn-danger btn-sm"
+                                                                (click)="ClearDate()">Clear
+                                                                Dates</button>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <select class="form-control form-select"
-                                                            [(ngModel)]="Student.Section">
-                                                            <option value="">-- Select Section --</option>
-                                                            <option *ngFor="let section of AllSection?.AllSection;"
-                                                                value="{{section.SectionID}}">{{section.Name}}
-                                                            </option>
-                                                        </select>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Roll No.</label>
+                                                        <div class="col-md-3">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Roll No." name="RollNo"
+                                                                [(ngModel)]="Student.RollNo">
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <select class="form-control form-select"
+                                                                [(ngModel)]="Student.BloodGroup" name="BloodGroup">
+                                                                <option value="">Blood group</option>
+                                                                <option value="A+">A+ </option>
+                                                                <option value="A-">A- </option>
+                                                                <option value="B+">B+ </option>
+                                                                <option value="B-">B- </option>
+                                                                <option value="O+">O+ </option>
+                                                                <option value="O-">O- </option>
+                                                                <option value="AB+">AB+ </option>
+                                                                <option value="AB-">AB- </option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Mobile</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Primary Mobile No."
-                                                            [(ngModel)]="Student.MobileNo">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Gender</label>
+                                                        <div class="col-md-10">
+                                                            <div class="radio" *ngFor="let gender of genders">
+                                                                <label>
+                                                                    <input type="radio" name="radio"
+                                                                        (change)="onGenderChange(gender)"
+                                                                        [(ngModel)]="Student.Gender"
+                                                                        [(ngModel)]="selectedGender" [value]="gender"
+                                                                        id="{{ gender }}" name="gender">
+                                                                    {{ gender }} </label>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Date of Birth <span
-                                                            class="required">*</span></label>
-                                                    <div class="col-md-3">
-                                                        <input type="date" class="form-control"
-                                                            [(ngModel)]="Student.DateOfBirth">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Student's Aadhaar
+                                                            No.</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control"
+                                                                placeholder=" Student's Aadhaar No."
+                                                                name="StudentAdharNo"
+                                                                [(ngModel)]="Student.StudentAdharNo">
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-3">
-                                                        <button type="button" class="btn btn-danger btn-sm"
-                                                            (click)="ClearDate()">Clear
-                                                            Dates</button>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Roll No.</label>
-                                                    <div class="col-md-3">
-                                                        <input type="text" class="form-control" placeholder="Roll No."
-                                                            [(ngModel)]="Student.RollNo">
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <select class="form-control form-select"
-                                                            [(ngModel)]="Student.BloodGroup">
-                                                            <option value="">Blood group</option>
-                                                            <option value="A+">A+ </option>
-                                                            <option value="A-">A- </option>
-                                                            <option value="B+">B+ </option>
-                                                            <option value="B-">B- </option>
-                                                            <option value="O+">O+ </option>
-                                                            <option value="O-">O- </option>
-                                                            <option value="AB+">AB+ </option>
-                                                            <option value="AB-">AB- </option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Gender</label>
-                                                    <div class="col-md-10">
-                                                        <div class="radio" *ngFor="let gender of genders">
-                                                            <label>
-                                                                <input type="radio" name="radio"
-                                                                    (change)="onGenderChange(gender)"
-                                                                    [(ngModel)]="Student.Gender"
-                                                                    [(ngModel)]="selectedGender" [value]="gender"
-                                                                    id="{{ gender }}" name="gender">
-                                                                {{ gender }} </label>
+                                                    <div class="form-group row ">
+                                                        <label class="col-form-label col-md-2">Photo</label>
+                                                        <div class="col-md-6">
+                                                            <div id="msg"></div>
+                                                            <input type="file" class="form-control" accept="image/*"
+                                                                (change)="onFileChange('Photo',$event)" name="Photo">
+                                                            <div class="photo_size">Image Size (MAX Size = 100KB)</div>
+
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Student's Aadhaar No.</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder=" Student's Aadhaar No."
-                                                            [(ngModel)]="Student.StudentAdharNo">
-                                                    </div>
+                                                <div class="d-flex justify-content-end">
+                                                    <a class="btn btn-primary next" (click)="onNextClick(1)">Next </a>
                                                 </div>
-                                                <div class="form-group row ">
-                                                    <label class="col-form-label col-md-2">Photo</label>
-                                                    <div class="col-md-6">
-                                                        <div id="msg"></div>
-                                                        <input type="file" name="img" class="form-control"
-                                                            accept="image/*">
+                                            </div>
+                                            <!-- =========================first-tab-end ==========================-->
+                                            <!-- =========================second-tab-open ==========================-->
+                                            <div class="tab-pane fade" role="tabpanel" id="step2"
+                                                aria-labelledby="step2-tab">
+                                                <div class="card-body">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Mother's Name <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="" class="form-control"
+                                                                placeholder="Mother's Name" name="MotherName"
+                                                                [(ngModel)]="Student.MotherName">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Qualification</label>
+                                                        <div class="col-md-6">
+                                                            <input type="" class="form-control"
+                                                                placeholder="Mother's Qualification"
+                                                                name="MotherQualification"
+                                                                [(ngModel)]="Student.MotherQualification">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Mother's Contact <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="number" class="form-control"
+                                                                placeholder="Mother's Contact" name="MotherContactNo"
+                                                                [(ngModel)]="Student.MotherContactNo">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Father's Name <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Father's Name" name="FatherName"
+                                                                [(ngModel)]="Student.FatherName">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Email</label>
+                                                        <div class="col-md-6">
+                                                            <input class="form-control" type="text"
+                                                                placeholder="Father's Email" name="Email"
+                                                                [(ngModel)]="Student.FatherEmail">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Father's Contact <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control"
+                                                                name="FatherContactNo" placeholder="Father's Contact"
+                                                                [(ngModel)]="Student.FatherContactNo">
+                                                        </div>
+                                                    </div>
 
-                                                        <div class="photo_size">Image Size (MAX Size = 100KB)</div>
-
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Qualification</label>
+                                                        <div class="col-md-6">
+                                                            <input class="form-control" type="text"
+                                                                placeholder="Father's Qualification"
+                                                                name="Qualification"
+                                                                [(ngModel)]="Student.FatherQualification">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Yearly Income</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="YearlyIncome"
+                                                                placeholder="Father Yearly Income"
+                                                                [(ngModel)]="Student.YearlyIncome">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Mother Tongue</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="MotherToung"
+                                                                placeholder="Mother Tongue"
+                                                                [(ngModel)]="Student.MotherToung">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Permanent/Official
+                                                            Address <span class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <textarea class="form-control" name="PermanentAddress"
+                                                                [(ngModel)]="Student.PermanentAddress"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Local/Residential
+                                                            Address <span class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <textarea class="form-control" name="LocalAddress"
+                                                                [(ngModel)]="Student.LocalAddress"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Village <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-3">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Village" name="Village"
+                                                                [(ngModel)]="Student.Village">
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <input type="text" class="form-control" placeholder="Post"
+                                                                name="Post" [(ngModel)]="Student.Post">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Police Station / Ward
+                                                            No. <span class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" name="PoliceStation"
+                                                                placeholder="Police Station"
+                                                                [(ngModel)]="Student.PoliceStation">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row ">
+                                                        <label class="col-form-label col-md-2">Pin Code <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Pin Code" name="PinCode"
+                                                                [(ngModel)]="Student.PinCode">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row ">
+                                                        <label class="col-form-label col-md-2">City <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" placeholder="City"
+                                                                name="City" [(ngModel)]="Student.City">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row ">
+                                                        <label class="col-form-label col-md-2">State <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control" placeholder="State"
+                                                                name="State" [(ngModel)]="Student.State">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row ">
+                                                        <label class="col-form-label col-md-2">Country <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Country" name="Country"
+                                                                [(ngModel)]="Student.Country">
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <a class="btn btn-secondary previous"
+                                                            (click)="onPreviousClick()">
+                                                            Back</a>
+                                                        <a class="btn btn-primary next"
+                                                            (click)="onNextClick(2)">Next</a>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="d-flex justify-content-end">
-                                                <a class="btn btn-primary next" (click)="onNextClick(1)">Next </a>
-                                            </div>
-                                        </div>
-                                        <!-- =========================first-tab-end ==========================-->
-                                        <!-- =========================second-tab-open ==========================-->
-                                        <div class="tab-pane fade" role="tabpanel" id="step2"
-                                            aria-labelledby="step2-tab">
-                                            <div class="card-body">
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Mother's Name</label>
-                                                    <div class="col-md-6">
-                                                        <input type="" class="form-control" placeholder="Mother's Name"
-                                                            [(ngModel)]="Student.MotherName">
+                                            <!-- =========================second-tab-end ==========================-->
+                                            <!-- =========================third-tab-open ==========================-->
+                                            <div class="tab-pane fade" role="tabpanel" id="step3"
+                                                aria-labelledby="step3-tab">
+                                                <div class="card-body">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Religion</label>
+                                                        <div class="col-md-2">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Hinduism" name="Religion"
+                                                                [(ngModel)]="Student.Religion">
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="General" name="Category"
+                                                                [(ngModel)]="Student.Category">
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <input type="text" class="form-control" placeholder="Cast"
+                                                                name="Cast" [(ngModel)]="Student.Cast">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Qualification</label>
-                                                    <div class="col-md-6">
-                                                        <input type="" class="form-control"
-                                                            placeholder="Mother's Qualification"
-                                                            [(ngModel)]="Student.MotherQualification">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Medical History</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control"
+                                                                name="MedicalHistory" placeholder="Medical History"
+                                                                [(ngModel)]="Student.MedicalHistory">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Mother's Contact <span
-                                                            class="required">*</span></label>
-                                                    <div class="col-md-6">
-                                                        <input type="number" class="form-control"
-                                                            placeholder="Mother's Contact"
-                                                            [(ngModel)]="Student.MotherContactNo">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Last Institution
+                                                            Name<span class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input class="form-control" type="text"
+                                                                name="LastInstitutionName"
+                                                                placeholder="Last Institution Name"
+                                                                [(ngModel)]="Student.LastInstituteName">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Father's Name </label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Father's Name"
-                                                            [(ngModel)]="Student.FatherName">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Last Class Attended <span
+                                                                class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Last Class Attended" name="LastClassAttended"
+                                                                [(ngModel)]="Student.LastClassAttended">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Father's Contact</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Father's Contact"
-                                                            [(ngModel)]="Student.FatherContactNo">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Result of Last Class
+                                                            <span class="required">*</span></label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control"
+                                                                name="ResultofLastClass"
+                                                                placeholder="Result of Last Class"
+                                                                [(ngModel)]="Student.ResultOfLastClass">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Email</label>
-                                                    <div class="col-md-6">
-                                                        <input class="form-control" type="text"
-                                                            placeholder="Father's Email"
-                                                            [(ngModel)]="Student.FatherEmail">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Last institution
+                                                            affiliated
+                                                            to</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Last institution affiliated to"
+                                                                name="Lastinstitutionaffiliated"
+                                                                [(ngModel)]="Student.LastInstituteAffiliatedTo">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Qualification</label>
-                                                    <div class="col-md-6">
-                                                        <input class="form-control" type="text"
-                                                            placeholder="Father's Qualification"
-                                                            [(ngModel)]="Student.FatherQualification">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Transfer certificate
+                                                            detail <span class="required">*</span></label>
+                                                        <div class="col-md-3">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="TC Number" name="Transfercertificate"
+                                                                [(ngModel)]="Student.TransferCertificateNo">
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <input type="date" class="form-control"
+                                                                placeholder="dd-mm-yyyy" name="TransfeCertificateDate"
+                                                                [(ngModel)]="Student.TransfeCertificateDate">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Yearly Income</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Father Yearly Income"
-                                                            [(ngModel)]="Student.YearlyIncome">
+                                                    <div class="d-flex justify-content-between">
+                                                        <a class="btn btn-secondary previous"
+                                                            (click)="onPreviousClick()">
+                                                            Back</a>
+                                                        <a class="btn btn-primary next"
+                                                            (click)="onNextClick(3)">Next</a>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Mother Tongue</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Mother Tongue"
-                                                            [(ngModel)]="Student.MotherToung">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Permanent/Official
-                                                        Address</label>
-                                                    <div class="col-md-6">
-                                                        <textarea class="form-control"
-                                                            [(ngModel)]="Student.PermanentAddress"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Local/Residential
-                                                        Address</label>
-                                                    <div class="col-md-6">
-                                                        <textarea class="form-control"
-                                                            [(ngModel)]="Student.LocalAddress"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Village</label>
-                                                    <div class="col-md-3">
-                                                        <input type="text" class="form-control" placeholder="Village"
-                                                            [(ngModel)]="Student.Village">
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <input type="text" class="form-control" placeholder="Post"
-                                                            [(ngModel)]="Student.Post">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Police Station / Ward
-                                                        No.</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Police Station"
-                                                            [(ngModel)]="Student.PoliceStation">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row ">
-                                                    <label class="col-form-label col-md-2">Pin Code</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control" placeholder="Pin Code"
-                                                            [(ngModel)]="Student.PinCode">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row ">
-                                                    <label class="col-form-label col-md-2">City</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control" placeholder="City"
-                                                            [(ngModel)]="Student.City">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row ">
-                                                    <label class="col-form-label col-md-2">State</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control" placeholder="State"
-                                                            [(ngModel)]="Student.State">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row ">
-                                                    <label class="col-form-label col-md-2">Country</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control" placeholder="Country"
-                                                            [(ngModel)]="Student.Country">
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between">
-                                                    <a class="btn btn-secondary previous" (click)="onPreviousClick()">
-                                                        Back</a>
-                                                    <a class="btn btn-primary next" (click)="onNextClick(2)">Next</a>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- =========================second-tab-end ==========================-->
-                                        <!-- =========================third-tab-open ==========================-->
-                                        <div class="tab-pane fade" role="tabpanel" id="step3"
-                                            aria-labelledby="step3-tab">
-                                            <div class="card-body">
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Religion</label>
-                                                    <div class="col-md-2">
-                                                        <input type="text" class="form-control" placeholder="Hinduism"
-                                                            [(ngModel)]="Student.Religion">
+                                            <!-- =========================third-tab-end ============================-->
+                                            <!-- =========================fourth-tab-open ============================-->
+                                            <div class="tab-pane fade" role="tabpanel" id="step4"
+                                                aria-labelledby="step4-tab">
+                                                <div class="card-body">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Student's Bank Account
+                                                            Number</label>
+                                                        <div class="col-md-6">
+                                                            <input type="text" class="form-control"
+                                                                name="BankAccountNumber"
+                                                                [(ngModel)]="Student.StudentBankAccountNo">
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-2">
-                                                        <input type="text" class="form-control" placeholder="General"
-                                                            [(ngModel)]="Student.Category">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Student's Bank IFSC
+                                                            (Code)</label>
+                                                        <div class="col-md-6">
+                                                            <input type="" class="form-control" name="StudentsBankIFSC"
+                                                                [(ngModel)]="Student.BankIFSC">
+                                                        </div>
                                                     </div>
-                                                    <div class="col-md-2">
-                                                        <input type="text" class="form-control" placeholder="Cast"
-                                                            [(ngModel)]="Student.Cast">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2">Monthly Fee Discount
+                                                            Amount</label>
+                                                        <div class="col-md-6">
+                                                            <input type="number" class="form-control" name="MonthlyFee"
+                                                                [(ngModel)]="Student.MonthlyFeesDiscountAmount">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Medical History</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Medical History"
-                                                            [(ngModel)]="Student.MedicalHistory">
+                                                    <div class="d-flex justify-content-between">
+                                                        <a class="btn btn-secondary previous"
+                                                            (click)="onPreviousClick()">
+                                                            Back</a>
+                                                        <a class="btn btn-primary next"
+                                                            (click)="onNextClick(4)">Next</a>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Last Institution Name</label>
-                                                    <div class="col-md-6">
-                                                        <input class="form-control" type="text"
-                                                            placeholder="Last Institution Name"
-                                                            [(ngModel)]="Student.LastInstituteName">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Last Class Attended</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Last Class Attended"
-                                                            [(ngModel)]="Student.LastClassAttended">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Result of Last Class</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Result of Last Class"
-                                                            [(ngModel)]="Student.ResultOfLastClass">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Last institution affiliated
-                                                        to</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="Last institution affiliated to"
-                                                            [(ngModel)]="Student.LastInstituteAffiliatedTo">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Transfer certificate
-                                                        detail</label>
-                                                    <div class="col-md-3">
-                                                        <input type="text" class="form-control" placeholder="TC Number"
-                                                            [(ngModel)]="Student.TransferCertificateNo">
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <input type="date" class="form-control" placeholder="dd-mm-yyyy"
-                                                            [(ngModel)]="Student.TransfeCertificateDate">
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between">
-                                                    <a class="btn btn-secondary previous" (click)="onPreviousClick()">
-                                                        Back</a>
-                                                    <a class="btn btn-primary next" (click)="onNextClick(3)">Next</a>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- =========================third-tab-end ============================-->
-                                        <!-- =========================fourth-tab-open ============================-->
-                                        <div class="tab-pane fade" role="tabpanel" id="step4"
-                                            aria-labelledby="step4-tab">
-                                            <div class="card-body">
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Student's Bank Account
-                                                        Number</label>
-                                                    <div class="col-md-6">
-                                                        <input type="text" class="form-control"
-                                                            [(ngModel)]="Student.StudentBankAccountNo">
+                                            <!-- =========================fourth-tab-end ============================-->
+                                            <!-- =========================five-tab-open =============================-->
+                                            <div class="tab-pane fade" role="tabpanel" id="step5"
+                                                aria-labelledby="step4-tab">
+                                                <div class="card-body">
+                                                    <div class="form-group row">
+                                                        <label class="col-form-label col-md-2"> Government ID</label>
+                                                        <div class="col-md-6">
+                                                            <input type="" class="form-control"
+                                                                placeholder="Government ID" name="GovermentIDName"
+                                                                [(ngModel)]="Student.GovermentIDName">
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Student's Bank IFSC
-                                                        (Code)</label>
-                                                    <div class="col-md-6">
-                                                        <input type="" class="form-control"
-                                                            [(ngModel)]="Student.BankIFSC">
+                                                    <div class="form-group row ">
+                                                        <label class="col-form-label col-md-2">Aadhar Card</label>
+                                                        <div class="col-md-6">
+                                                            <div id="msg"></div>
+                                                            <input type="file" class="form-control" accept="image/*"
+                                                                (change)="onFileChange('Adhar',$event)">
+                                                            <div class="photo_size">Image Size (MAX Size = 100KB)</div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2">Monthly Fee Discount
-                                                        Amount</label>
-                                                    <div class="col-md-6">
-                                                        <input type="number" class="form-control"
-                                                            [(ngModel)]="Student.MonthlyFeesDiscountAmount">
+                                                    <div class="form-group row ">
+                                                        <label class="col-form-label col-md-2">Birth Certificate</label>
+                                                        <div class="col-md-6">
+                                                            <div id="msg"></div>
+                                                            <input type="file" class="form-control" accept="image/*"
+                                                                (change)="onFileChange('Birth',$event)">
+                                                            <div class="photo_size">Image Size (MAX Size = 100KB)</div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between">
-                                                    <a class="btn btn-secondary previous" (click)="onPreviousClick()">
-                                                        Back</a>
-                                                    <a class="btn btn-primary next" (click)="onNextClick(4)">Next</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- =========================fourth-tab-end ============================-->
-                                        <!-- =========================five-tab-open =============================-->
-                                        <div class="tab-pane fade" role="tabpanel" id="step5"
-                                            aria-labelledby="step4-tab">
-                                            <div class="card-body">
-                                                <div class="form-group row">
-                                                    <label class="col-form-label col-md-2"> Government ID</label>
-                                                    <div class="col-md-6">
-                                                        <input type="" class="form-control" placeholder="Government ID"
-                                                            [(ngModel)]="Student.GovermentIDName">
+                                                    <div class="form-group row ">
+                                                        <label class="col-form-label col-md-2">Transfer
+                                                            Certificate</label>
+                                                        <div class="col-md-6">
+                                                            <div id="msg"></div>
+                                                            <input type="file" class="form-control" accept="image/*"
+                                                                (change)="onFileChange('Transfer',$event)">
+                                                            <div class="photo_size">Image Size (MAX Size = 100KB)</div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row ">
-                                                    <label class="col-form-label col-md-2">Aadhar Card</label>
-                                                    <div class="col-md-6">
-                                                        <div id="msg"></div>
-                                                        <input type="file" name="img" class="form-control"
-                                                            accept="image/*">
-                                                        <div class="photo_size">Image Size (MAX Size = 100KB)</div>
+                                                    <div class="form-group row ">
+                                                        <label class="col-form-label col-md-2">Marksheet</label>
+                                                        <div class="col-md-6">
+                                                            <div id="msg"></div>
+                                                            <input type="file" class="form-control" accept="image/*"
+                                                                (change)="onFileChange('Marksheet',$event)">
+                                                            <div class="photo_size">Image Size (MAX Size = 100KB)</div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row ">
-                                                    <label class="col-form-label col-md-2">Birth Certificate</label>
-                                                    <div class="col-md-6">
-                                                        <div id="msg"></div>
-                                                        <input type="file" name="img" class="form-control"
-                                                            accept="image/*">
-                                                        <div class="photo_size">Image Size (MAX Size = 100KB)</div>
+                                                    <div class="d-flex justify-content-between">
+                                                        <a class="btn btn-secondary previous"
+                                                            (click)="onPreviousClick()">
+                                                            Back</a>
+                                                        <button type="submit"
+                                                            class="btn btn-primary next">Submit</button>
                                                     </div>
-                                                </div>
-                                                <div class="form-group row ">
-                                                    <label class="col-form-label col-md-2">TransferCertificate</label>
-                                                    <div class="col-md-6">
-                                                        <div id="msg"></div>
-                                                        <input type="file" name="img" class="form-control"
-                                                            accept="image/*">
-                                                        <div class="photo_size">Image Size (MAX Size = 100KB)</div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row ">
-                                                    <label class="col-form-label col-md-2">Marksheet</label>
-                                                    <div class="col-md-6">
-                                                        <div id="msg"></div>
-                                                        <input type="file" name="img" class="form-control"
-                                                            accept="image/*">
-                                                        <div class="photo_size">Image Size (MAX Size = 100KB)</div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between">
-                                                    <a class="btn btn-secondary previous" (click)="onPreviousClick()">
-                                                        Back</a>
-                                                    <a class="btn btn-primary next">Submit</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
