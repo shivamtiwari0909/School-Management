@@ -1,10 +1,10 @@
 import { Component, signal, ChangeDetectorRef, ElementRef, ViewChild } from '@angular/core';
 import { CalendarOptions, DateSelectArg, EventClickArg, EventApi } from '@fullcalendar/core';
-import interactionPlugin from '@fullcalendar/interaction';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import listPlugin from '@fullcalendar/list';
-import { FullCalendarComponent } from '@fullcalendar/angular';
+// import interactionPlugin from '@fullcalendar/interaction';
+// import dayGridPlugin from '@fullcalendar/daygrid';
+// import timeGridPlugin from '@fullcalendar/timegrid';
+// import listPlugin from '@fullcalendar/list';
+// import { FullCalendarComponent } from '@fullcalendar/angular';
 import { AllMonthlyCalender, GetAllEventType, StudentMonthlyCalender, StudentEventType, StudentCalender } from 'src/app/Models/Student/student-monthly-calender';
 import { INITIAL_EVENTS, createEventId, StudentMonthlyCalenderService } from 'src/app/service/Student/student-monthly-calender.service';
 import { Router } from '@angular/router';
@@ -18,27 +18,27 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./student-monthly-calender.component.css']
 })
 export class StudentMonthlyCalenderComponent {
-  @ViewChild('calendar')
-  calendar!: FullCalendarComponent;
+  // @ViewChild('calendar')
+  // calendar!: FullCalendarComponent;
 
   @ViewChild('closebutton', { static: false })
   closebutton!: ElementRef;
 
   Events: any[] = [];
-  calendarOptions: CalendarOptions = {
-    plugins: [dayGridPlugin, interactionPlugin],
-    initialView: 'dayGridMonth',
-    headerToolbar: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
-    },
-    weekends: true,
-    editable: true,
-    selectable: true,
-    selectMirror: true,
-    dayMaxEvents: true,
-  };
+  // calendarOptions: CalendarOptions = {
+  //   plugins: [dayGridPlugin, interactionPlugin],
+  //   initialView: 'dayGridMonth',
+  //   headerToolbar: {
+  //     left: 'prev,next today',
+  //     center: 'title',
+  //     right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek',
+  //   },
+  //   weekends: true,
+  //   editable: true,
+  //   selectable: true,
+  //   selectMirror: true,
+  //   dayMaxEvents: true,
+  // };
 
   months: string[] = [
     'January', 'February', 'March', 'April',
@@ -127,25 +127,25 @@ export class StudentMonthlyCalenderComponent {
       //return this.httpClient.get('https://localhost:44338/api/Student/GetAllStudentMonthlyCalender?StudentID=1').subscribe((res: any) => {
       
     }, 2200);
-    setTimeout(() => {
-      this.calendarOptions = {
-        plugins: [
-          interactionPlugin,
-          dayGridPlugin,
-          timeGridPlugin,
-          listPlugin,
-        ],
-        headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-        },
-        initialView: 'dayGridMonth',
-        events: this.Events,
-        //dateClick: this.onDateClick.bind(this),
-        eventClick: this.handleEventClick.bind(this),
-      };
-    }, 2500);
+    // setTimeout(() => {
+    //   this.calendarOptions = {
+    //     plugins: [
+    //       interactionPlugin,
+    //       dayGridPlugin,
+    //       timeGridPlugin,
+    //       listPlugin,
+    //     ],
+    //     headerToolbar: {
+    //       left: 'prev,next today',
+    //       center: 'title',
+    //       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+    //     },
+    //     initialView: 'dayGridMonth',
+    //     events: this.Events,
+    //     //dateClick: this.onDateClick.bind(this),
+    //     eventClick: this.handleEventClick.bind(this),
+    //   };
+    // }, 2500);
   }
 
   onDateClick(res: any) {
